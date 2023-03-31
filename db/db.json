@@ -1,6 +1,39 @@
 {
   "restuarant": [
-    { "id": 1, "title": "json-java-resto", "author": "uday" },
-    { "id": 2, "title": "json-resto", "author": "pavan" }
+    {
+      "name": "Uday's Restaurant",
+      "address": "Hyderabad",
+      "rating": 3,
+      "email": "uday@test.com",
+      "id": 1
+    },
+    {
+      "name": "Pavan's Chinese Fast Food",
+      "address": "Vizag",
+      "rating": 3.5,
+      "email": "pavan@test.com",
+      "id": 2
+    },
+    {
+      "name": "Vinay's Taco Stall",
+      "address": "Denton, Texas",
+      "rating": 4.2,
+      "email": "vinay@test.com",
+      "id": 3
+    },
+    {
+      "name": "Pranay's Indian Cuisine",
+      "address": "London, UK",
+      "rating": 4.3,
+      "email": "pranay@test.com",
+      "id": 4
+    },
+    {
+      "name": "Parikshith's Continental Restaurant",
+      "address": "Pragathi Nagar, Hyderabad",
+      "rating": 4,
+      "email": "parikshith@test.com",
+      "id": 5
+    }
   ]
 }
