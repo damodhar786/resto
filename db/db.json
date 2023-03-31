@@ -1,1 +1,6 @@
-ECHO is on.
+{
+  "restuarant": [
+    { "id": 1, "title": "json-java-resto", "author": "uday" },
+    { "id": 2, "title": "json-resto", "author": "pavan" }
+  ]
+}
