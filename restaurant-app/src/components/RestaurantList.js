@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Table } from "react-bootstrap";
 class RestaurantList extends Component {
   constructor() {
     super();
@@ -24,16 +24,32 @@ class RestaurantList extends Component {
         {
           this.state.list ?
             <div>
-              {
-                this.state.list.map((item) =>
-                  <div>
-                    {item.name}
-                    {item.address}
-                    {item.rating}
-                    {item.email}
-                  </div>)
+              <Table striped bordered hover variant="dark">
+                <thead>
+                  <tr>
+                    <th>Sl.No</th>
+                    <th>Restaurant Name</th>
+                    <th>Rating</th>
+                    <th>Location</th>
+                    <th>Contact</th>
+                  </tr>
+                </thead>
+                {
+                  this.state.list.map((item) =>
 
-              }
+                    <tbody>
+                      <tr>
+                        <td>{item.id}</td>
+                        <td>{item.name}</td>
+                        <td>{item.rating}</td>
+                        <td>{item.address}</td>
+                        <td> {item.email}</td>
+                      </tr>
+                    </tbody>
+                  )
+                }
+              </Table>
+
             </div>
             : <p>Please Wait.....</p>
         }
