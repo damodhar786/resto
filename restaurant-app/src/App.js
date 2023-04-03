@@ -21,7 +21,7 @@ function App() {
               <Link to="/create" className="nav-link">Create</Link>
               <Link to="/list" className="nav-link">List</Link>
               <Link to="/search" className="nav-link">Search</Link>
-              <Link to="/update" className="nav-link">Update</Link>
+              {/* <Link to="/update" className="nav-link">Update</Link> */}
 
             </Nav>
           </Container>

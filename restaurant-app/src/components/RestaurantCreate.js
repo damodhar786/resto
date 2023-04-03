@@ -39,7 +39,7 @@ class RestaurantCreate extends Component {
     render() {
         return (
             <div>
-                <h1>Restaurant Create</h1>
+                <h1>Add Restaurant</h1>
                 <Form>
                     <Form.Group className="mb-3 m-4" controlId="formBasicEmail">
                         <Form.Label>Restaurant Name</Form.Label>

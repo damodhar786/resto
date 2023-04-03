@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 class RestaurantList extends Component {
   constructor() {
     super();
@@ -19,7 +20,7 @@ class RestaurantList extends Component {
   render() {
     return (
       <div>
-        <h1>Restaurant List</h1>
+        <h1>Restaurants</h1>
 
         {
           this.state.list ?
@@ -32,6 +33,8 @@ class RestaurantList extends Component {
                     <th>Rating</th>
                     <th>Location</th>
                     <th>Contact</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                   </tr>
                 </thead>
                 {
@@ -44,6 +47,12 @@ class RestaurantList extends Component {
                         <td>{item.rating}</td>
                         <td>{item.address}</td>
                         <td> {item.email}</td>
+                        <td>
+                          <Link to="/update" className="nav-link"><i class="fa-solid fa-pen"></i></Link>
+                        </td>
+                        <td>
+                          <Link to="/update" className="nav-link"><i class="fa-solid fa-trash"></i></Link>
+                        </td>
                       </tr>
                     </tbody>
                   )
