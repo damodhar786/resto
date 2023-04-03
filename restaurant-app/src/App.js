@@ -16,21 +16,13 @@ function App() {
           <Container>
             <Navbar.Brand href="#home">Welcome to Resto</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="#home">
-                <Link to="/" className="nav-link">Home</Link>
-              </Nav.Link>
-              <Nav.Link href="#create">
-                <Link to="/create" className="nav-link">Create</Link>
-              </Nav.Link>
-              <Nav.Link href="#list">
-                <Link to="/list" className="nav-link">List</Link>
-              </Nav.Link>
-              <Nav.Link href="#search">
-                <Link to="/search" className="nav-link">Search</Link>
-              </Nav.Link>
-              <Nav.Link href="#update">
-                <Link to="/update" className="nav-link">Update</Link>
-              </Nav.Link>
+                            
+              <Link className="nav-link" to="/">Home</Link>
+              <Link to="/create" className="nav-link">Create</Link>
+              <Link to="/list" className="nav-link">List</Link>
+              <Link to="/search" className="nav-link">Search</Link>
+              <Link to="/update" className="nav-link">Update</Link>
+
             </Nav>
           </Container>
         </Navbar>

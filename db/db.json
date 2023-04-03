@@ -34,6 +34,20 @@
       "rating": 4,
       "email": "parikshith@test.com",
       "id": 5
+    },
+    {
+      "name": "Sai's Blueberries Juice Point",
+      "email": "sai'sblueberries@juice.point",
+      "rating": "2.5",
+      "address": "Nizampet, Hyderabad",
+      "id": 6
+    },
+    {
+      "name": "Shashi's Bar and Restaurant",
+      "email": "shashi'sbar&resto@gmail.com",
+      "rating": "4.5",
+      "address": "Ameenpur, Chandanagar, Hyderabad",
+      "id": 7
     }
   ]
 }
