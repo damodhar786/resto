@@ -5,35 +5,47 @@ import RestaurantList from "./components/RestaurantList";
 import RestaurantSearch from "./components/RestaurantSearch";
 import RestaurantDetail from "./components/RestaurantDetail";
 import RestaurantUpdate from "./components/RestaurantUpdate";
+import { Navbar, Container, Nav } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
 
-      <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/create">Create</Link></li>
-          <li><Link to="/list">List</Link></li>
-          <li><Link to="/search">Search</Link></li>
-          <li><Link to="/details">Details</Link></li>
-          <li><Link to="/update">Update</Link></li>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand href="#home">Welcome to Resto</Navbar.Brand>
+            <Nav className="me-auto">
+              <Nav.Link href="#home">
+                <Link to="/" className="nav-link">Home</Link>
+              </Nav.Link>
+              <Nav.Link href="#create">
+                <Link to="/create" className="nav-link">Create</Link>
+              </Nav.Link>
+              <Nav.Link href="#list">
+                <Link to="/list" className="nav-link">List</Link>
+              </Nav.Link>
+              <Nav.Link href="#search">
+                <Link to="/search" className="nav-link">Search</Link>
+              </Nav.Link>
+              <Nav.Link href="#update">
+                <Link to="/update" className="nav-link">Update</Link>
+              </Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
 
-        </ul>
-      </div>
-
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/create" element={<RestaurantCreate />}></Route>
-        <Route path="/list" element={<RestaurantList />}></Route>
-        <Route path="/search" element={<RestaurantSearch />}></Route>
-        <Route path="/details" element={<RestaurantDetail />}></Route>
-        <Route path="/update" element={<RestaurantUpdate />}></Route>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/create" element={<RestaurantCreate />}></Route>
+          <Route path="/list" element={<RestaurantList />}></Route>
+          <Route path="/search" element={<RestaurantSearch />}></Route>
+          <Route path="/details" element={<RestaurantDetail />}></Route>
+          <Route path="/update" element={<RestaurantUpdate />}></Route>
+        </Routes>
 
       </BrowserRouter>
-      
+
     </div>
   );
 }
