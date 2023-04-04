@@ -18,6 +18,7 @@ class RestaurantList extends Component {
   }
 
   deleteResto(id) {
+    console.log("id", id)
     fetch("http://localhost:5000/restuarant/" + id,{
       method: "delete",
       headers:{

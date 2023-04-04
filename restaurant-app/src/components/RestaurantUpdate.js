@@ -11,7 +11,6 @@ class RestaurantUpdate extends Component {
             address: "",
             rating: "",
             id: window.location.href.split('/')[4]
-
         }
     }
 
