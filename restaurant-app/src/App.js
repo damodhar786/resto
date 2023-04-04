@@ -14,13 +14,13 @@ function App() {
 
         <Navbar bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="#home">Resto</Navbar.Brand>
+            <Link to="/" className="resto" style={{color: "white", fontFamily: "cursive", fontSize: "18px", textDecoration: "none", margin: "5px"}}>Resto</Link>
             <Nav className="me-auto">
 
-              <Link className="nav-link" to="/">Home</Link>
-              <Link to="/create" className="nav-link">Create</Link>
-              <Link to="/list" className="nav-link">List</Link>
-              <Link to="/search" className="nav-link">Search</Link>
+              <Link className="nav-link" to="/"><i class="fa-solid fa-house-chimney"></i> Home</Link>
+              <Link to="/create" className="nav-link"><i class="fa-solid fa-plus"></i> Add a Resto</Link>
+              <Link to="/list" className="nav-link"><i class="fa-solid fa-list"></i> Resto Directory</Link>
+              <Link to="/search" className="nav-link"><i class="fa-solid fa-magnifying-glass"></i> Search a Resto</Link>
               {/* <Link to="/update" className="nav-link">Update</Link> */}
 
             </Nav>
@@ -37,7 +37,7 @@ function App() {
           <Route path="/update/:id" Component={props => (
             < RestaurantUpdate {...props} />
           )}></Route>
-          
+
         </Routes>
 
       </BrowserRouter>
