@@ -9,9 +9,9 @@
     },
     {
       "name": "Pavan's Chinese Fast Food",
-      "address": "Vizag",
-      "rating": 3.5,
       "email": "pavan@test.com",
+      "address": "Vizag",
+      "rating": "3.5",
       "id": 2
     },
     {

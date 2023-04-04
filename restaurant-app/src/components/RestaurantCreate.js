@@ -25,6 +25,8 @@ class RestaurantCreate extends Component {
         }).then((result) => {
             result.json().then((response) => {
                 console.log("Finally Added resto: ", response);
+                alert("Added Restaurant's Data");
+
             });
         });
 

@@ -48,10 +48,10 @@ class RestaurantList extends Component {
                         <td>{item.address}</td>
                         <td> {item.email}</td>
                         <td>
-                          <Link to="/update" className="nav-link"><i class="fa-solid fa-pen"></i></Link>
+                          <Link to={"/update/" + item.id} className="nav-link"><i className="fa-solid fa-pen"></i></Link>
                         </td>
                         <td>
-                          <Link to="/update" className="nav-link"><i class="fa-solid fa-trash"></i></Link>
+                          <Link to="/update" className="nav-link"><i className="fa-solid fa-trash"></i></Link>
                         </td>
                       </tr>
                     </tbody>

@@ -14,9 +14,9 @@ function App() {
 
         <Navbar bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="#home">Welcome to Resto</Navbar.Brand>
+            <Navbar.Brand href="#home">Resto</Navbar.Brand>
             <Nav className="me-auto">
-                            
+
               <Link className="nav-link" to="/">Home</Link>
               <Link to="/create" className="nav-link">Create</Link>
               <Link to="/list" className="nav-link">List</Link>
@@ -28,17 +28,21 @@ function App() {
         </Navbar>
 
         <Routes>
+
           <Route path="/" element={<Home />}></Route>
           <Route path="/create" element={<RestaurantCreate />}></Route>
           <Route path="/list" element={<RestaurantList />}></Route>
           <Route path="/search" element={<RestaurantSearch />}></Route>
           <Route path="/details" element={<RestaurantDetail />}></Route>
-          <Route path="/update" element={<RestaurantUpdate />}></Route>
+          <Route path="/update/:id" Component={props => (
+            < RestaurantUpdate {...props} />
+          )}></Route>
+          
         </Routes>
 
       </BrowserRouter>
 
-    </div>
+    </div >
   );
 }
 
