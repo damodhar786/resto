@@ -17,6 +17,21 @@ class RestaurantList extends Component {
     });
   }
 
+  deleteResto(id) {
+    fetch("http://localhost:5000/restuarant/" + id,{
+      method: "delete",
+      headers:{
+        'Content-Type' : 'application/json'
+      }, 
+    }).then((result) =>{
+      result.json().then((response) =>{
+        console.log("Selected Restaurant's data has been deleted", response);
+        alert("Selected Restaurant's data has been deleted");
+        this.componentDidMount();
+      })
+    })
+  }
+
   render() {
     return (
       <div>
@@ -48,10 +63,14 @@ class RestaurantList extends Component {
                         <td>{item.address}</td>
                         <td> {item.email}</td>
                         <td>
-                          <Link to={"/update/" + item.id} className="nav-link"><i className="fa-solid fa-pen"></i></Link>
+                          <Link to={"/update/" + item.id} className="nav-link"><i className="fa-solid fa-pen" ></i></Link>
                         </td>
                         <td>
-                          <Link to="/update" className="nav-link"><i className="fa-solid fa-trash"></i></Link>
+                          <i
+                            className="fa-solid fa-trash"
+                            style={{ cursor: "pointer"}}
+                            onClick={() => this.deleteResto(item.id)}
+                          ></i>
                         </td>
                       </tr>
                     </tbody>

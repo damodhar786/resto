@@ -14,7 +14,8 @@ function App() {
 
         <Navbar bg="dark" variant="dark">
           <Container>
-            <Link to="/" className="resto" style={{color: "white", fontFamily: "cursive", fontSize: "18px", textDecoration: "none", margin: "5px"}}>Resto</Link>
+            <Link to="/" className="resto" style={{ color: "white", fontFamily: "cursive", fontSize: "18px", textDecoration: "none", margin: "5px" }}>Resto</Link>
+            
             <Nav className="me-auto">
 
               <Link className="nav-link" to="/"><i class="fa-solid fa-house-chimney"></i> Home</Link>
