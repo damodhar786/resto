@@ -1,7 +1,39 @@
 import React, { Component } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { browserHistory } from 'react-router-dom';
 
 class Login extends Component {
+
+
+    constructor() {
+        super();
+        this.state = {
+            userName: "",
+            password: "",
+        }
+    }
+
+    login() {
+        console.log(this.state);
+        fetch('http://localhost:5000/login?q=' + this.state.userName + '&q=' + this.state.password).then((result) => {
+            result.json().then((response) => {
+                console.log('Login Data: ', response);
+                if (response.length > 0) {
+                    console.log(this.props);
+                    browserHistory.push('/list');
+                } else {
+                    alert("Invalid User-Name or Password")
+                }
+            })
+        })
+
+        this.setState({
+            userName: "",
+            password: "",
+        })
+    }
+
+
     render() {
         return (
             <div>
@@ -18,16 +50,20 @@ class Login extends Component {
                                 <Form>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>User Name</Form.Label>
-                                        <Form.Control type="email" placeholder="User Name" />
+                                        <Form.Control type="email" placeholder="User Name"
+                                        value={this.state.userName}
+                                        onChange={(event) => { this.setState({ userName: event.target.value }) }} />
                                     </Form.Group>
 
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control type="password" placeholder="Password" />
+                                        <Form.Control type="password" placeholder="Password"
+                                        value={this.state.password}
+                                        onChange={(event) => { this.setState({ password: event.target.value }) }} />
                                     </Form.Group>
 
-                                    <Button variant="primary">
-                                        Submit
+                                    <Button variant="primary" onClick={() => { this.login() }}>
+                                        Login
                                     </Button>
                                 </Form>
                             </div>

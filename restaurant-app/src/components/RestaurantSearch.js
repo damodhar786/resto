@@ -43,7 +43,6 @@ class RestaurantSearch extends Component {
     }
 
     deleteResto(id) {
-        console.log("id", id)
         fetch("http://localhost:5000/restuarant/" + id, {
             method: "delete",
             headers: {
@@ -71,11 +70,6 @@ class RestaurantSearch extends Component {
                                 onChange={(event) => { this.searchRestaurant(event.target.value) }}
                             />
                         </Form.Group>
-
-                        {/* <Button variant="primary" className='m-4'
-                        onClick={() => { this.searchRestaurant() }}>
-                        Search
-                    </Button> */}
                     </Form>
 
                     <div>

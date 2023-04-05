@@ -23,14 +23,14 @@ function App() {
             </Nav>
 
             <Nav>
-              <Link className="nav-link" to="/"><i class="fa-solid fa-user"></i> Login</Link>
+              <Link className="nav-link" to="/"><i className="fa-solid fa-user"></i> Login</Link>
             </Nav>
           </Container>
         </Navbar>
 
         <Routes>
 
-          <Route path="/" element={<Login />}></Route>
+          <Route path="/" Component={ props => (<Login {...props}/>)}></Route>
           <Route path="/create" element={<RestaurantCreate />}></Route>
           <Route path="/list" element={<RestaurantList />}></Route>
           <Route path="/search" element={<RestaurantSearch />}></Route>

@@ -1,4 +1,10 @@
 {
+  "login": [
+    {
+      "username": "uday",
+      "password": "uday@1234"
+    }
+  ],
   "restuarant": [
     {
       "name": "Uday's Restaurant",
