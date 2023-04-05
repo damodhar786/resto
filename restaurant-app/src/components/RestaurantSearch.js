@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Form, Stack } from 'react-bootstrap';
+import { Container, Form, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class RestaurantSearch extends Component {
 
@@ -7,11 +8,15 @@ class RestaurantSearch extends Component {
         super();
         this.state = {
             searchData: "",
-            noData: false
+            noData: false,
+            lastSelectedId: ""
         }
     }
 
     searchRestaurant(key) {
+        this.setState({
+            lastSelectedId: key
+        })
         if (key) {
             fetch('http://localhost:5000/restuarant?q=' + key).then((result) => {
                 result.json().then((response) => {
@@ -37,42 +42,90 @@ class RestaurantSearch extends Component {
         }
     }
 
+    deleteResto(id) {
+        console.log("id", id)
+        fetch("http://localhost:5000/restuarant/" + id, {
+            method: "delete",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }).then((result) => {
+            result.json().then((response) => {
+                console.log("Selected Restaurant's data has been deleted", response);
+                alert("Selected Restaurant's data has been deleted");
+                this.searchRestaurant(this.state.lastSelectedId);
+            })
+        })
+    }
+
     render() {
         return (
             <div>
-                <h1>Search a Restaurant</h1>
+                <h1>Search Restaurants</h1>
 
-                <Form>
-                    <Form.Group className="mb-3 m-4">
-                        <Form.Control type="text" placeholder="Search for Restaurant / City / Rating....."
-                            // value={this.state.name}
-                            onChange={(event) => { this.searchRestaurant(event.target.value) }}
-                        />
-                    </Form.Group>
+                <Container>
+                    <Form>
+                        <Form.Group className="mb-3 m-4">
+                            <Form.Control type="text" placeholder="Search for Restaurant / City / Rating....."
+                                // value={this.state.name}
+                                onChange={(event) => { this.searchRestaurant(event.target.value) }}
+                            />
+                        </Form.Group>
 
-                    {/* <Button variant="primary" className='m-4'
+                        {/* <Button variant="primary" className='m-4'
                         onClick={() => { this.searchRestaurant() }}>
                         Search
                     </Button> */}
-                </Form>
+                    </Form>
 
-                <div>
-                    {
-                        this.state.noData
+                    <div>
+
+                        {
+                            this.state.noData
                             ? <div><h3>Sorry! No Data Has Found On Your Search</h3></div>
                             : this.state.searchData
                                 ? <div>
-                                    {
-                                        this.state.searchData.map((item) =>
-                                            <Stack direction="horizontal" gap={3}>
-                                                <div className="bg-light border">{item.name}</div>
-                                            </Stack>
-                                        )}
+                                    <Table striped bordered hover variant="dark">
+                                        <thead>
+                                            <tr>
+                                                <th>Restaurant Name</th>
+                                                <th>Rating</th>
+                                                <th>Location</th>
+                                                <th>Contact</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        {
+                                            this.state.searchData.map((item) =>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{item.name}</td>
+                                                        <td>{item.rating}</td>
+                                                        <td>{item.address}</td>
+                                                        <td> {item.email}</td>
+                                                        <td>
+                                                            <Link to={"/update/" + item.id} className="nav-link"><i className="fa-solid fa-pen" ></i></Link>
+                                                        </td>
+                                                        <td>
+                                                            <i
+                                                                className="fa-solid fa-trash"
+                                                                style={{ cursor: "pointer" }}
+                                                                onClick={() => this.deleteResto(item.id)}
+                                                            ></i>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            )}
+                                    </Table>
                                 </div>
                                 : ""
-                    }
-                </div>
-            </div>
+                        }
+                    </div>
+                </Container >
+
+
+            </div >
         )
     }
 }
