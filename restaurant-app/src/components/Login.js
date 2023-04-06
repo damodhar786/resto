@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
-import { browserHistory } from 'react-router-dom';
 
 class Login extends Component {
 
@@ -19,8 +18,7 @@ class Login extends Component {
             result.json().then((response) => {
                 console.log('Login Data: ', response);
                 if (response.length > 0) {
-                    console.log(this.props);
-                    browserHistory.push('/list');
+                    window.location.href = 'list';
                 } else {
                     alert("Invalid User-Name or Password")
                 }

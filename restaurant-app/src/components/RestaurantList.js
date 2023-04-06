@@ -54,9 +54,9 @@ class RestaurantList extends Component {
                   </tr>
                 </thead>
                 {
-                  this.state.list.map((item) =>
+                  this.state.list.map((item, index) =>
 
-                    <tbody>
+                    <tbody key={index} >
                       <tr>
                         <td>{item.id}</td>
                         <td>{item.name}</td>
