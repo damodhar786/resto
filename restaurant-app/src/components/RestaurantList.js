@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Dashboard from './Dashboard';
 class RestaurantList extends Component {
   constructor() {
     super();
@@ -36,6 +37,7 @@ class RestaurantList extends Component {
   render() {
     return (
       <div>
+        <Dashboard />
         <h1>Restaurants</h1>
 
         {

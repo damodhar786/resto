@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, Container } from "react-bootstrap";
+import Dashboard from './Dashboard';
 
 class RestaurantCreate extends Component {
 
@@ -42,6 +43,7 @@ class RestaurantCreate extends Component {
     render() {
         return (
             <div>
+                <Dashboard />
                 <h1>Add Restaurant</h1>
                 <Container>
                     <Form>

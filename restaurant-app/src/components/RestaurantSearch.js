@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Form, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Dashboard from './Dashboard';
 
 class RestaurantSearch extends Component {
 
@@ -60,6 +61,7 @@ class RestaurantSearch extends Component {
     render() {
         return (
             <div>
+                <Dashboard />
                 <h1>Search Restaurants</h1>
 
                 <Container>
