@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+
         <Routes>
           <Route path="/" Component={props => (<Login {...props} />)}></Route>
           <Route path="/create" element={<RestaurantCreate />}></Route>
@@ -19,7 +20,6 @@ function App() {
           <Route path="/update/:id" Component={props => (
             < RestaurantUpdate {...props} />
           )}></Route>
-
         </Routes>
 
       </BrowserRouter>
