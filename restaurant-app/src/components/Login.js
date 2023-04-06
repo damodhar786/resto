@@ -39,7 +39,7 @@ class Login extends Component {
                     <Row>
                         <Col>
                             <div className="flex">
-                                <h1>Uday </h1><h1 className='gap'>Group of Restaurants</h1>
+                                <h1>Uday</h1> <h1 className='gap'>Group of Restaurants</h1>
                             </div>
                         </Col>
                         <Col>
@@ -49,15 +49,15 @@ class Login extends Component {
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>User Name</Form.Label>
                                         <Form.Control type="email" placeholder="User Name"
-                                        value={this.state.userName}
-                                        onChange={(event) => { this.setState({ userName: event.target.value }) }} />
+                                            value={this.state.userName}
+                                            onChange={(event) => { this.setState({ userName: event.target.value }) }} />
                                     </Form.Group>
 
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Password</Form.Label>
                                         <Form.Control type="password" placeholder="Password"
-                                        value={this.state.password}
-                                        onChange={(event) => { this.setState({ password: event.target.value }) }} />
+                                            value={this.state.password}
+                                            onChange={(event) => { this.setState({ password: event.target.value }) }} />
                                     </Form.Group>
 
                                     <Button variant="primary" onClick={() => { this.login() }}>

@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* background-color: #F8E9E9; */
 }
 
 code {
@@ -12,24 +14,24 @@ code {
     monospace;
 }
 
+
 .flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 5rem;
+  height: 90vh;
 }
 
-.flex h1{
-  margin-top: 5rem;
+.flex h1 {
   font-family: cursive;
   color: orangered;
   text-align: center;
 }
 
-.flex .gap{
+.flex .gap {
   margin-top: 1rem;
 }
 
-.flex h3{
+.flex h3 {
   text-align: center;
 }

@@ -9,7 +9,7 @@ class Dashboard extends Component {
             <div>
                 <Navbar bg="dark" variant="dark">
                     <Container>
-                        <Link to="/" className="resto" style={{ color: "white", fontFamily: "cursive", fontSize: "18px", textDecoration: "none", margin: "5px" }}>Resto</Link>
+                        <Link to="/list" className="resto" style={{ color: "white", fontFamily: "cursive", fontSize: "18px", textDecoration: "none", margin: "5px" }}>Restos</Link>
 
                         <Nav className="me-auto">
                             <Link to="/create" className="nav-link"><i className="fa-solid fa-plus"></i> Add a Resto</Link>
@@ -18,7 +18,7 @@ class Dashboard extends Component {
                         </Nav>
 
                         <Nav>
-                            <Link className="nav-link" to="/"><i className="fa-solid fa-user"></i> Login</Link>
+                            <Link className="nav-link" to="/"><i className="fa-solid fa-user"></i> Logout</Link>
                         </Nav>
                     </Container>
                 </Navbar>
